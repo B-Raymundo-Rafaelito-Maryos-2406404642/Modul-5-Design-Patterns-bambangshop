@@ -69,7 +69,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
     -   [x] Commit: `Implement publish function in Program service and Program controller.`
     -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -119,3 +119,30 @@ Here are the questions for this reflection:
     Yes, I have, but just a little. Postman is a powerful tool for testing APIs, allowing developers to send requests, inspect responses, and automate tests. It helps in verifying the functionality of endpoints, debugging issues, and ensuring that the API behaves as expected. Features like environment variables, collections, and automation scripts make it easier to manage and test APIs efficiently. These features are particularly useful for group projects and future software engineering projects as they streamline the testing process, enhance collaboration, and ensure the reliability of the API.
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+    Answer: 
+    
+    In this tutorial case, we use the Push model of the Observer Pattern. The publisher (NotificationService) pushes data to the subscribers (Subscribers) by calling their update method with the notification payload. This approach is efficient when the publisher has the necessary data to send to the subscribers, and it ensures that subscribers receive the latest information as soon as it is available. 
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+    Answer:
+
+    Advantages:
+    - Subscribers can request data at their own pace, reducing unnecessary data transfer.
+    - Subscribers can choose which data they need, reducing the amount of data transferred.
+    - Subscribers can cache data, reducing the need for repeated requests.
+    - Subscribers can process data asynchronously, improving performance and responsiveness.
+
+    Disadvantages:
+    - Subscribers need to know how to request data, increasing complexity.
+    - Subscribers need to handle errors and retries, increasing complexity.
+    - Subscribers need to manage their own state, increasing complexity.
+    - Subscribers need to be aware of the publisher's data structure, increasing coupling.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+    Answer:
+
+    If we decide to not use multi-threading in the notification process, the program will execute notifications sequentially. This means that each notification will be sent one after the other, without any overlap or parallel processing. As a result, the program will be slower and less efficient, especially if there are many subscribers or if the notifications are complex. Additionally, the program may become unresponsive if a notification takes a long time to process, as it will block the main thread until the notification is complete.
