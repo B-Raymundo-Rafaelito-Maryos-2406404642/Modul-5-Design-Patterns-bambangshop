@@ -63,7 +63,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement subscribe function in Notification controller.`
     -   [x] Commit: `Implement unsubscribe function in Notification service.`
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -99,5 +99,23 @@ Here are the questions for this reflection:
     In this case, we still need DashMap because it provides thread-safe operations for concurrent access to the HashMap. The Singleton pattern is used to ensure that only one instance of a class exists, but it doesn't inherently provide thread safety for the data structures it manages. DashMap is specifically designed to handle concurrent access safely, making it the appropriate choice for managing the list of subscribers in a thread-safe manner.
 
 #### Reflection Publisher-2
+Here are the questions for this reflection:
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+    Answer:
+
+    In the Model-View Controller (MVC) compound pattern, separating "Service" and "Repository" from the Model is essential for several reasons. This separation enhances modularity, improves maintainability, and promotes the Single Responsibility Principle. By isolating business logic into the Service layer, we ensure that the Model remains focused on data representation and persistence. The Repository layer handles data access and storage, providing a clean abstraction over the data source. This separation allows for easier testing, as each component can be tested independently, and it facilitates scalability and flexibility in the system. Additionally, it promotes a clear division of concerns, making the codebase more understandable and easier to maintain.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+    Answer:
+
+    If we only use the Model, the interactions between each model (Program, Subscriber, Notification) would lead to increased code complexity. Each model would need to handle both data storage and business logic, resulting in a monolithic and tightly coupled codebase. This would make the code harder to maintain, test, and scale. Additionally, changes in one part of the system would likely require modifications in other parts, increasing the risk of bugs and making the system less flexible to changes.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+    Answer:
+
+    Yes, I have, but just a little. Postman is a powerful tool for testing APIs, allowing developers to send requests, inspect responses, and automate tests. It helps in verifying the functionality of endpoints, debugging issues, and ensuring that the API behaves as expected. Features like environment variables, collections, and automation scripts make it easier to manage and test APIs efficiently. These features are particularly useful for group projects and future software engineering projects as they streamline the testing process, enhance collaboration, and ensure the reliability of the API.
 
 #### Reflection Publisher-3
